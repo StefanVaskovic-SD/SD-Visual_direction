@@ -1,0 +1,28 @@
+# Project: Visual Direction Discovery Summary Tool
+
+## Tech Stack
+- React + Tailwind CSS
+- Papa Parse for CSV parsing
+- Google Gemini API (gemini-2.5-flash) for AI summarization
+
+## Code Style
+- Functional components with hooks
+- Clean, readable code with comments for complex logic
+- Error handling for file uploads and API calls
+- Responsive design (mobile-first)
+
+## File Structure
+/components
+  /VisualDirectionTool
+    - index.jsx (main component)
+    - FileUploader.jsx
+    - SummaryDisplay.jsx
+    - ExportButton.jsx
+    - utils/csvParser.js
+    - utils/promptBuilder.js
+
+## Key Behaviors
+- Validate CSV structure before processing
+- Show loading states during AI processing
+- Handle missing/optional fields gracefully
+- Keep UI minimal and professional (dark theme preferred)
