@@ -6,6 +6,8 @@ import Papa from 'papaparse'
 const INCLUDED_SECTIONS = [
   'Company & Business',
   'Target Audience and User Personas',
+  'Customer Journey',
+  'Website Goals',
   'Design and Branding'
 ]
 
