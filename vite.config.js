@@ -6,6 +6,10 @@ export default defineConfig({
   preview: {
     port: process.env.PORT || 4173,
     host: true,
+    allowedHosts: [
+      'sd-visual-direction.onrender.com',
+      '.onrender.com'
+    ],
   },
   server: {
     port: process.env.PORT || 5173,
