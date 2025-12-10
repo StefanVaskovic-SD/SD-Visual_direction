@@ -142,13 +142,18 @@ Focus on:
 
 Write as if you're creating a visual direction brief for a design team - clear, actionable, and focused on what matters most. Do NOT simply copy the questionnaire answers verbatim.
 
-IMPORTANT: If file links are provided, include them at the end in a clear "Reference Links:" section.
+CRITICAL FORMATTING REQUIREMENT:
+At the very end of your response, you MUST include a "Files:" section. 
+- If file links are provided below, list them one per line after "Files:"
+- If no file links are provided, write exactly: "Files: no files found"
 
 Questionnaire Answers:
 ${designAnswers}`
   
   if (fileLinks.length > 0) {
-    prompt += `\n\nReference Links to include:\n${fileLinks.join('\n')}`
+    prompt += `\n\nFiles to include in "Files:" section:\n${fileLinks.join('\n')}`
+  } else {
+    prompt += `\n\nNo files were provided in the questionnaire.`
   }
   
   return prompt
