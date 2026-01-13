@@ -87,20 +87,15 @@ export function buildWebsiteGoalsPrompt(questionnaireData) {
     .map(item => `Q: ${item.question}\nA: ${item.answer}`)
     .join('\n\n')
   
-  return `Analyze the following questionnaire answers about website goals and create a CONCISE, well-structured summary (2-3 paragraphs maximum) that synthesizes the client's needs and requirements.
+  return `You are summarizing website goals from a questionnaire. Use ONLY the information provided below. Do NOT invent or assume anything. Extract and organize the actual answers given.
 
-Your task is to:
-1. ANALYZE the answers to understand the client's true needs and priorities
-2. SYNTHESIZE the information into clear, actionable insights
-3. Write in a professional, summary format - NOT a copy-paste of the answers
+Provide a DETAILED summary that includes:
+- Main purpose of the website
+- How it supports business strategy
+- Must-have features and functionalities
+- Performance, scalability, and maintenance expectations
 
-Focus on:
-- Main purpose and strategic role of the website
-- Key features and functionalities that matter most to the client
-- Performance and scalability expectations (summarize, don't list everything)
-- How the website supports their business strategy
-
-Write as if you're creating a brief for a design/development team - clear, actionable, and focused on what matters most. Do NOT simply copy the questionnaire answers verbatim.
+Base your response STRICTLY on the questionnaire answers below. Do not add generic examples or assumptions.
 
 Questionnaire Answers:
 ${goalsAnswers}`
@@ -127,33 +122,23 @@ export function buildDesignBrandingPrompt(questionnaireData) {
     .map(item => item.files)
     .filter((link, index, self) => self.indexOf(link) === index) // Remove duplicates
   
-  let prompt = `Analyze the following questionnaire answers about design and branding requirements and create a CONCISE, well-structured summary (2-3 paragraphs maximum) that synthesizes the client's visual direction needs.
+  let prompt = `You are summarizing design and branding requirements from a questionnaire. Use ONLY the information provided below. Do NOT invent or add generic examples. Be DETAILED but CONCISE - focus on what was actually specified.
 
-Your task is to:
-1. ANALYZE the answers to understand the client's brand identity, visual preferences, and design goals
-2. SYNTHESIZE the information into clear, actionable design direction
-3. Write in a professional, summary format - NOT a copy-paste of the answers
+Provide a comprehensive summary covering:
+- Brand identity (logo, colors, typography) - use exact specifications from answers
+- Emotions and messages to convey - use exact quotes/phrases from answers
+- Competitors and how to stand out - use specific competitors mentioned
+- Primary design goals - use exact goals stated
 
-Focus on:
-- Brand identity direction (colors, typography, logo approach) - summarize key specifications
-- Core emotions and messages the design should convey - synthesize the essence, don't list everything
-- Competitive positioning - how they want to differentiate visually
-- Primary design objectives - what matters most to them
+CRITICAL: Include ALL file links provided in the Files column. List them clearly.
 
-Write as if you're creating a visual direction brief for a design team - clear, actionable, and focused on what matters most. Do NOT simply copy the questionnaire answers verbatim.
-
-CRITICAL FORMATTING REQUIREMENT:
-At the very end of your response, you MUST include a "Files:" section. 
-- If file links are provided below, list them one per line after "Files:"
-- If no file links are provided, write exactly: "Files: no files found"
+Base your response STRICTLY on the questionnaire answers below. Do not add filler content or generic design advice.
 
 Questionnaire Answers:
 ${designAnswers}`
   
   if (fileLinks.length > 0) {
-    prompt += `\n\nFiles to include in "Files:" section:\n${fileLinks.join('\n')}`
-  } else {
-    prompt += `\n\nNo files were provided in the questionnaire.`
+    prompt += `\n\nREQUIRED LINKS TO INCLUDE:\n${fileLinks.join('\n')}`
   }
   
   return prompt

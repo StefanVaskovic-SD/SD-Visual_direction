@@ -9,6 +9,10 @@ export default {
       fontFamily: {
         sans: ['var(--font-family)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
+      colors: {
+        'custom-black': '#080808',
+        'custom-white': '#f5f5f7',
+      },
     },
   },
   plugins: [],

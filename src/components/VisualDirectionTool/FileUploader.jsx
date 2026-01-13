@@ -44,7 +44,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-sm font-medium text-custom-white/80 mb-2">
           {label}
         </label>
       )}
@@ -57,7 +57,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
               ? 'border-red-500 bg-red-950/30 scale-[1.02]' 
               : error 
               ? 'border-red-500 bg-red-950/20' 
-              : 'border-gray-700 bg-gray-900/50 hover:border-gray-600 hover:bg-gray-900/70'
+              : 'border-custom-black/50 bg-custom-black/30 hover:border-custom-black/70 hover:bg-custom-black/40'
             }
           `}
           onDragOver={handleDragOver}
@@ -75,7 +75,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
           <div className="flex items-center gap-4">
             {/* Cloud Upload Icon */}
             <svg
-              className={`flex-shrink-0 h-8 w-8 ${isDragging ? 'text-red-400' : 'text-gray-500'} transition-colors`}
+              className={`flex-shrink-0 h-8 w-8 ${isDragging ? 'text-red-400' : 'text-custom-white/50'} transition-colors`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -88,10 +88,10 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
               />
             </svg>
             <div className="flex-1 text-left">
-              <div className="text-gray-300 text-sm font-medium">
+              <div className="text-custom-white/80 text-sm font-medium">
                 Drag and drop file here
               </div>
-              <p className="text-xs text-gray-600 mt-0.5">
+              <p className="text-xs text-custom-white/40 mt-0.5">
                 Limit 200MB per file • CSV
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
         </div>
         <button
           onClick={handleClick}
-          className="absolute right-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-lg text-xs font-semibold transition-all border border-gray-700 hover:border-gray-600"
+          className="absolute right-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-custom-black/50 hover:bg-custom-black/70 text-custom-white/80 hover:text-custom-white rounded-lg text-xs font-semibold transition-all border border-custom-black/50 hover:border-custom-black/70"
         >
           Browse files
         </button>

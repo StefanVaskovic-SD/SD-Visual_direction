@@ -209,12 +209,12 @@ export default function VisualDirectionTool() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 h-screen overflow-hidden">
+    <div className="min-h-screen bg-custom-black h-screen overflow-hidden">
       <div className="flex h-full relative">
         {/* Sidebar */}
         <div 
           className={`
-            bg-gray-900 border-r border-gray-800 hidden lg:block transition-all duration-300 ease-in-out h-full
+            bg-custom-black border-r border-custom-black/50 hidden lg:block transition-all duration-300 ease-in-out h-full
             ${sidebarVisible ? 'w-80' : 'w-0 overflow-hidden'}
           `}
           onMouseEnter={() => !sidebarVisible && setShowSidebarArrow(true)}
@@ -226,11 +226,11 @@ export default function VisualDirectionTool() {
                 <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-                <h2 className="text-xl font-semibold text-gray-50">Instructions</h2>
+                <h2 className="text-xl font-semibold text-custom-white">Instructions</h2>
               </div>
               <button
                 onClick={() => setSidebarVisible(false)}
-                className="text-gray-400 hover:text-gray-200 transition-colors p-1 rounded hover:bg-gray-800"
+                className="text-custom-white/60 hover:text-custom-white transition-colors p-1 rounded hover:bg-custom-black/50"
                 title="Hide sidebar"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ export default function VisualDirectionTool() {
             {!sidebarVisible && showSidebarArrow && (
               <button
                 onClick={() => setSidebarVisible(true)}
-                className="absolute top-4 right-0 translate-x-full bg-gray-900 border border-gray-800 border-l-0 rounded-r-lg p-2 text-gray-400 hover:text-gray-200 hover:bg-gray-800 transition-all z-10"
+                className="absolute top-4 right-0 translate-x-full bg-custom-black border border-custom-black/50 border-l-0 rounded-r-lg p-2 text-custom-white/60 hover:text-custom-white hover:bg-custom-black/50 transition-all z-10"
                 title="Show sidebar"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,25 +252,25 @@ export default function VisualDirectionTool() {
               </button>
             )}
             
-            <ol className="space-y-4 text-gray-300">
+            <ol className="space-y-4 text-custom-white/80">
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-gray-300 font-medium">1.</span>
+                <span className="flex-shrink-0 text-custom-white/80 font-medium">1.</span>
                 <span>Upload your questionnaire CSV file</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-gray-300 font-medium">2.</span>
+                <span className="flex-shrink-0 text-custom-white/80 font-medium">2.</span>
                 <span>Upload your user personas CSV file</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-gray-300 font-medium">3.</span>
+                <span className="flex-shrink-0 text-custom-white/80 font-medium">3.</span>
                 <span>Optionally add website URL for analysis</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-gray-300 font-medium">4.</span>
+                <span className="flex-shrink-0 text-custom-white/80 font-medium">4.</span>
                 <span>Generate summary using AI</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-gray-300 font-medium">5.</span>
+                <span className="flex-shrink-0 text-custom-white/80 font-medium">5.</span>
                 <span>Download the results as CSV</span>
               </li>
             </ol>
@@ -278,12 +278,12 @@ export default function VisualDirectionTool() {
         </div>
 
         {/* Main Content */}
-        <div className={`flex-1 bg-gray-950 overflow-y-auto transition-all duration-300`}>
+        <div className={`flex-1 bg-custom-black overflow-y-auto transition-all duration-300`}>
           {/* Show sidebar button when sidebar is hidden */}
           {!sidebarVisible && (
             <button
               onClick={() => setSidebarVisible(true)}
-              className="fixed top-4 left-4 z-20 bg-gray-900 border border-gray-800 rounded-lg p-2 text-gray-400 hover:text-gray-200 hover:bg-gray-800 transition-all"
+              className="fixed top-4 left-4 z-20 bg-custom-black border border-custom-black/50 rounded-lg p-2 text-custom-white/60 hover:text-custom-white hover:bg-custom-black/50 transition-all"
               title="Show sidebar"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -296,20 +296,20 @@ export default function VisualDirectionTool() {
             <div className="mb-10">
               <div className="flex flex-col items-center gap-5 mb-3 text-center">
                 <div>
-                  <h1 className="text-4xl font-bold text-white mb-2">Visual Direction Discovery Summary Tool</h1>
-                  <p className="text-gray-400 text-lg">Upload questionnaire and personas CSVs to generate a visual direction brief</p>
+                  <h1 className="text-4xl font-bold text-custom-white mb-2">Visual Direction Discovery Summary Tool</h1>
+                  <p className="text-custom-white/60 text-lg">Upload questionnaire and personas CSVs to generate a visual direction brief</p>
                 </div>
               </div>
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-0 mb-8 border-b-2 border-gray-800">
+            <div className="flex gap-0 mb-8 border-b-2 border-custom-black/50">
               <button
                 onClick={() => setActiveTab('upload')}
                 className={`flex items-center gap-2 px-8 py-4 font-semibold transition-all relative ${
                   activeTab === 'upload'
-                    ? 'text-white'
-                    : 'text-gray-500 hover:text-gray-300'
+                    ? 'text-custom-white'
+                    : 'text-custom-white/50 hover:text-custom-white/80'
                 }`}
               >
                 {activeTab === 'upload' && (
@@ -325,10 +325,10 @@ export default function VisualDirectionTool() {
                 disabled={summary.length === 0}
                 className={`flex items-center gap-2 px-8 py-4 font-semibold transition-all relative ${
                   activeTab === 'preview'
-                    ? 'text-white'
+                    ? 'text-custom-white'
                     : summary.length === 0
-                    ? 'text-gray-700 cursor-not-allowed'
-                    : 'text-gray-500 hover:text-gray-300'
+                    ? 'text-custom-white/30 cursor-not-allowed'
+                    : 'text-custom-white/50 hover:text-custom-white/80'
                 }`}
               >
                 {activeTab === 'preview' && (
@@ -344,10 +344,10 @@ export default function VisualDirectionTool() {
                 disabled={summary.length === 0}
                 className={`flex items-center gap-2 px-8 py-4 font-semibold transition-all relative ${
                   activeTab === 'download'
-                    ? 'text-white'
+                    ? 'text-custom-white'
                     : summary.length === 0
-                    ? 'text-gray-700 cursor-not-allowed'
-                    : 'text-gray-500 hover:text-gray-300'
+                    ? 'text-custom-white/30 cursor-not-allowed'
+                    : 'text-custom-white/50 hover:text-custom-white/80'
                 }`}
               >
                 {activeTab === 'download' && (
@@ -367,7 +367,7 @@ export default function VisualDirectionTool() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Questionnaire CSV Upload */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-50 mb-3">Upload Questionnaire CSV</h3>
+                    <h3 className="text-lg font-semibold text-custom-white mb-3">Upload Questionnaire CSV</h3>
                     <FileUploader
                       label=""
                       onFileSelect={handleQuestionnaireFile}
@@ -382,7 +382,7 @@ export default function VisualDirectionTool() {
                             <div>
                               <p className="text-green-400 font-semibold text-sm">CSV file loaded!</p>
                               {questionnaireData && (
-                                <p className="text-xs text-gray-400 mt-0.5">Total rows: {questionnaireData.data.length}</p>
+                                <p className="text-xs text-custom-white/60 mt-0.5">Total rows: {questionnaireData.data.length}</p>
                               )}
                             </div>
                           </div>
@@ -392,14 +392,14 @@ export default function VisualDirectionTool() {
                               setQuestionnaireData(null)
                               setQuestionnaireError('')
                             }}
-                            className="text-gray-500 hover:text-gray-300 transition-colors p-1 rounded hover:bg-gray-800"
+                            className="text-custom-white/50 hover:text-custom-white/80 transition-colors p-1 rounded hover:bg-custom-black/50"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                           </button>
                         </div>
-                        <div className="p-2 bg-gray-900/50 rounded text-xs text-blue-400">
+                        <div className="p-2 bg-custom-black/50 rounded text-xs text-blue-400">
                           File: {questionnaireFile.name} ({formatFileSize(questionnaireFile.size)})
                         </div>
                       </div>
@@ -408,7 +408,7 @@ export default function VisualDirectionTool() {
 
                   {/* Personas CSV Upload */}
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-50 mb-3">Upload User Personas CSV</h3>
+                    <h3 className="text-lg font-semibold text-custom-white mb-3">Upload User Personas CSV</h3>
                     <FileUploader
                       label=""
                       onFileSelect={handlePersonasFile}
@@ -423,7 +423,7 @@ export default function VisualDirectionTool() {
                             <div>
                               <p className="text-green-400 font-semibold text-sm">CSV file loaded!</p>
                               {personasData && (
-                                <p className="text-xs text-gray-400 mt-0.5">Total personas: {personasData.length}</p>
+                                <p className="text-xs text-custom-white/60 mt-0.5">Total personas: {personasData.length}</p>
                               )}
                             </div>
                           </div>
@@ -433,14 +433,14 @@ export default function VisualDirectionTool() {
                               setPersonasData(null)
                               setPersonasError('')
                             }}
-                            className="text-gray-500 hover:text-gray-300 transition-colors p-1 rounded hover:bg-gray-800"
+                            className="text-custom-white/50 hover:text-custom-white/80 transition-colors p-1 rounded hover:bg-custom-black/50"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                           </button>
                         </div>
-                        <div className="p-2 bg-gray-900/50 rounded text-xs text-blue-400">
+                        <div className="p-2 bg-custom-black/50 rounded text-xs text-blue-400">
                           File: {personasFile.name} ({formatFileSize(personasFile.size)})
                         </div>
                       </div>
@@ -450,13 +450,13 @@ export default function VisualDirectionTool() {
 
                 {/* Website URL Input */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-50 mb-3">Website URL (Optional)</h3>
+                  <h3 className="text-lg font-semibold text-custom-white mb-3">Website URL (Optional)</h3>
                   <input
                     type="url"
                     value={websiteUrl}
                     onChange={(e) => setWebsiteUrl(e.target.value)}
                     placeholder="https://example.com"
-                    className="w-full px-4 py-3 bg-gray-900 border-2 border-gray-800 rounded-xl text-gray-100 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-4 py-3 bg-custom-black/50 border-2 border-custom-black/50 rounded-xl text-custom-white placeholder-custom-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   />
                 </div>
 
@@ -467,15 +467,15 @@ export default function VisualDirectionTool() {
                   className={`
                     w-full py-5 px-8 rounded-xl font-bold text-lg transition-all shadow-lg
                     ${isLoading || !questionnaireFile || !personasFile || !apiKey
-                      ? 'bg-gray-800 text-gray-600 cursor-not-allowed border-2 border-gray-800'
-                      : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 active:scale-[0.98] shadow-blue-500/20'
+                      ? 'bg-custom-black/50 text-custom-white/30 cursor-not-allowed border-2 border-custom-black/50'
+                      : 'bg-gradient-to-r from-blue-600 to-blue-700 text-custom-white hover:from-blue-700 hover:to-blue-800 active:scale-[0.98] shadow-blue-500/20'
                     }
                   `}
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">
                       <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-custom-white"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -537,8 +537,8 @@ export default function VisualDirectionTool() {
                         />
                       </svg>
                       <div>
-                        <p className="text-xl font-semibold text-gray-200 mb-2">Generating Summary...</p>
-                        <p className="text-gray-400">This may take a few moments. Please wait.</p>
+                        <p className="text-xl font-semibold text-custom-white/80 mb-2">Generating Summary...</p>
+                        <p className="text-custom-white/60">This may take a few moments. Please wait.</p>
                       </div>
                     </div>
                   </div>
@@ -546,7 +546,7 @@ export default function VisualDirectionTool() {
                   <SummaryDisplay summary={summary} />
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-gray-400">No summary generated yet. Go to "Upload & Generate" tab to create one.</p>
+                    <p className="text-custom-white/60">No summary generated yet. Go to "Upload & Generate" tab to create one.</p>
                   </div>
                 )}
               </div>
@@ -560,14 +560,14 @@ export default function VisualDirectionTool() {
                       <svg className="w-16 h-16 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
-                      <h3 className="text-xl font-semibold text-gray-100 mb-2">Ready to Download</h3>
-                      <p className="text-gray-400 mb-6">Your visual direction summary is ready to export as CSV.</p>
+                      <h3 className="text-xl font-semibold text-custom-white mb-2">Ready to Download</h3>
+                      <p className="text-custom-white/60 mb-6">Your visual direction summary is ready to export as CSV.</p>
                     </div>
                     <ExportButton summary={summary} disabled={isLoading} />
                   </div>
                 ) : (
                   <div>
-                    <p className="text-gray-400">No summary available to download. Generate a summary first.</p>
+                    <p className="text-custom-white/60">No summary available to download. Generate a summary first.</p>
                   </div>
                 )}
               </div>
