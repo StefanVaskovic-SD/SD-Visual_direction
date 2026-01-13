@@ -44,7 +44,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-custom-white/80 mb-2">
+        <label className="block text-sm font-medium text-custom-light-200 mb-2">
           {label}
         </label>
       )}
@@ -54,10 +54,10 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
             border-2 border-dashed rounded-xl p-6 text-center cursor-pointer
             transition-all duration-200
             ${isDragging 
-              ? 'border-red-500 bg-red-950/30 scale-[1.02]' 
+              ? 'border-custom-white bg-custom-dark-300 scale-[1.02]' 
               : error 
-              ? 'border-red-500 bg-red-950/20' 
-              : 'border-custom-black/50 bg-custom-black/30 hover:border-custom-black/70 hover:bg-custom-black/40'
+              ? 'border-custom-white bg-custom-dark-300' 
+              : 'border-custom-dark-500 bg-custom-dark-200 hover:border-custom-dark-400 hover:bg-custom-dark-300'
             }
           `}
           onDragOver={handleDragOver}
@@ -75,7 +75,7 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
           <div className="flex items-center gap-4">
             {/* Cloud Upload Icon */}
             <svg
-              className={`flex-shrink-0 h-8 w-8 ${isDragging ? 'text-red-400' : 'text-custom-white/50'} transition-colors`}
+              className={`flex-shrink-0 h-8 w-8 ${isDragging ? 'text-custom-white' : 'text-custom-light-400'} transition-colors`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -88,10 +88,10 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
               />
             </svg>
             <div className="flex-1 text-left">
-              <div className="text-custom-white/80 text-sm font-medium">
+              <div className="text-custom-light-200 text-sm font-medium">
                 Drag and drop file here
               </div>
-              <p className="text-xs text-custom-white/40 mt-0.5">
+              <p className="text-xs text-custom-light-400 mt-0.5">
                 Limit 200MB per file • CSV
               </p>
             </div>
@@ -99,13 +99,13 @@ export default function FileUploader({ label, onFileSelect, accept, error }) {
         </div>
         <button
           onClick={handleClick}
-          className="absolute right-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-custom-black/50 hover:bg-custom-black/70 text-custom-white/80 hover:text-custom-white rounded-lg text-xs font-semibold transition-all border border-custom-black/50 hover:border-custom-black/70"
+          className="absolute right-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-custom-white text-custom-black hover:bg-custom-light-100 rounded-lg text-xs font-semibold transition-all border border-custom-dark-500 hover:border-custom-white"
         >
           Browse files
         </button>
       </div>
       {error && (
-        <p className="mt-2 text-sm text-red-400">{error}</p>
+        <p className="mt-2 text-sm text-custom-white">{error}</p>
       )}
     </div>
   )

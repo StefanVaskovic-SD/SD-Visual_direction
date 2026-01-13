@@ -214,7 +214,7 @@ export default function VisualDirectionTool() {
         {/* Sidebar */}
         <div 
           className={`
-            bg-custom-black border-r border-custom-black/50 hidden lg:block transition-all duration-300 ease-in-out h-full
+            bg-custom-dark-200 border-r border-custom-dark-500 hidden lg:block transition-all duration-300 ease-in-out h-full
             ${sidebarVisible ? 'w-80' : 'w-0 overflow-hidden'}
           `}
           onMouseEnter={() => !sidebarVisible && setShowSidebarArrow(true)}
@@ -223,14 +223,14 @@ export default function VisualDirectionTool() {
           <div className="p-6 h-full">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2">
-                <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-custom-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
                 <h2 className="text-xl font-semibold text-custom-white">Instructions</h2>
               </div>
               <button
                 onClick={() => setSidebarVisible(false)}
-                className="text-custom-white/60 hover:text-custom-white transition-colors p-1 rounded hover:bg-custom-black/50"
+                className="text-custom-light-300 hover:text-custom-white transition-colors p-1 rounded hover:bg-custom-dark-300"
                 title="Hide sidebar"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ export default function VisualDirectionTool() {
             {!sidebarVisible && showSidebarArrow && (
               <button
                 onClick={() => setSidebarVisible(true)}
-                className="absolute top-4 right-0 translate-x-full bg-custom-black border border-custom-black/50 border-l-0 rounded-r-lg p-2 text-custom-white/60 hover:text-custom-white hover:bg-custom-black/50 transition-all z-10"
+                className="absolute top-4 right-0 translate-x-full bg-custom-dark-200 border border-custom-dark-500 border-l-0 rounded-r-lg p-2 text-custom-light-300 hover:text-custom-white hover:bg-custom-dark-300 transition-all z-10"
                 title="Show sidebar"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,25 +252,25 @@ export default function VisualDirectionTool() {
               </button>
             )}
             
-            <ol className="space-y-4 text-custom-white/80">
+            <ol className="space-y-4 text-custom-light-200">
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-custom-white/80 font-medium">1.</span>
+                <span className="flex-shrink-0 text-custom-light-200 font-medium">1.</span>
                 <span>Upload your questionnaire CSV file</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-custom-white/80 font-medium">2.</span>
+                <span className="flex-shrink-0 text-custom-light-200 font-medium">2.</span>
                 <span>Upload your user personas CSV file</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-custom-white/80 font-medium">3.</span>
+                <span className="flex-shrink-0 text-custom-light-200 font-medium">3.</span>
                 <span>Optionally add website URL for analysis</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-custom-white/80 font-medium">4.</span>
+                <span className="flex-shrink-0 text-custom-light-200 font-medium">4.</span>
                 <span>Generate summary using AI</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 text-custom-white/80 font-medium">5.</span>
+                <span className="flex-shrink-0 text-custom-light-200 font-medium">5.</span>
                 <span>Download the results as CSV</span>
               </li>
             </ol>
@@ -283,7 +283,7 @@ export default function VisualDirectionTool() {
           {!sidebarVisible && (
             <button
               onClick={() => setSidebarVisible(true)}
-              className="fixed top-4 left-4 z-20 bg-custom-black border border-custom-black/50 rounded-lg p-2 text-custom-white/60 hover:text-custom-white hover:bg-custom-black/50 transition-all"
+              className="fixed top-4 left-4 z-20 bg-custom-dark-200 border border-custom-dark-500 rounded-lg p-2 text-custom-light-300 hover:text-custom-white hover:bg-custom-dark-300 transition-all"
               title="Show sidebar"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,23 +297,23 @@ export default function VisualDirectionTool() {
               <div className="flex flex-col items-center gap-5 mb-3 text-center">
                 <div>
                   <h1 className="text-4xl font-bold text-custom-white mb-2">Visual Direction Discovery Summary Tool</h1>
-                  <p className="text-custom-white/60 text-lg">Upload questionnaire and personas CSVs to generate a visual direction brief</p>
+                  <p className="text-custom-light-300 text-lg">Upload questionnaire and personas CSVs to generate a visual direction brief</p>
                 </div>
               </div>
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-0 mb-8 border-b-2 border-custom-black/50">
+            <div className="flex gap-0 mb-8 border-b-2 border-custom-dark-500">
               <button
                 onClick={() => setActiveTab('upload')}
                 className={`flex items-center gap-2 px-8 py-4 font-semibold transition-all relative ${
                   activeTab === 'upload'
                     ? 'text-custom-white'
-                    : 'text-custom-white/50 hover:text-custom-white/80'
+                    : 'text-custom-light-400 hover:text-custom-light-200'
                 }`}
               >
                 {activeTab === 'upload' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-custom-white"></div>
                 )}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
@@ -327,12 +327,12 @@ export default function VisualDirectionTool() {
                   activeTab === 'preview'
                     ? 'text-custom-white'
                     : summary.length === 0
-                    ? 'text-custom-white/30 cursor-not-allowed'
-                    : 'text-custom-white/50 hover:text-custom-white/80'
+                    ? 'text-custom-dark-600 cursor-not-allowed'
+                    : 'text-custom-light-400 hover:text-custom-light-200'
                 }`}
               >
                 {activeTab === 'preview' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-custom-white"></div>
                 )}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -346,12 +346,12 @@ export default function VisualDirectionTool() {
                   activeTab === 'download'
                     ? 'text-custom-white'
                     : summary.length === 0
-                    ? 'text-custom-white/30 cursor-not-allowed'
-                    : 'text-custom-white/50 hover:text-custom-white/80'
+                    ? 'text-custom-dark-600 cursor-not-allowed'
+                    : 'text-custom-light-400 hover:text-custom-light-200'
                 }`}
               >
                 {activeTab === 'download' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-custom-white"></div>
                 )}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -375,14 +375,14 @@ export default function VisualDirectionTool() {
                       error={questionnaireError}
                     />
                     {questionnaireFile && (
-                      <div className="mt-3 p-3 bg-green-950/50 border-2 border-green-600/50 rounded-lg">
+                      <div className="mt-3 p-3 bg-custom-dark-300 border-2 border-custom-dark-500 rounded-lg">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-green-400 text-lg font-bold">✓</span>
+                            <span className="text-custom-white text-lg font-bold">✓</span>
                             <div>
-                              <p className="text-green-400 font-semibold text-sm">CSV file loaded!</p>
+                              <p className="text-custom-white font-semibold text-sm">CSV file loaded!</p>
                               {questionnaireData && (
-                                <p className="text-xs text-custom-white/60 mt-0.5">Total rows: {questionnaireData.data.length}</p>
+                                <p className="text-xs text-custom-light-300 mt-0.5">Total rows: {questionnaireData.data.length}</p>
                               )}
                             </div>
                           </div>
@@ -392,14 +392,14 @@ export default function VisualDirectionTool() {
                               setQuestionnaireData(null)
                               setQuestionnaireError('')
                             }}
-                            className="text-custom-white/50 hover:text-custom-white/80 transition-colors p-1 rounded hover:bg-custom-black/50"
+                            className="text-custom-light-400 hover:text-custom-white transition-colors p-1 rounded hover:bg-custom-dark-400"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                           </button>
                         </div>
-                        <div className="p-2 bg-custom-black/50 rounded text-xs text-blue-400">
+                        <div className="p-2 bg-custom-dark-200 rounded text-xs text-custom-light-200">
                           File: {questionnaireFile.name} ({formatFileSize(questionnaireFile.size)})
                         </div>
                       </div>
@@ -416,14 +416,14 @@ export default function VisualDirectionTool() {
                       error={personasError}
                     />
                     {personasFile && (
-                      <div className="mt-3 p-3 bg-green-950/50 border-2 border-green-600/50 rounded-lg">
+                      <div className="mt-3 p-3 bg-custom-dark-300 border-2 border-custom-dark-500 rounded-lg">
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-green-400 text-lg font-bold">✓</span>
+                            <span className="text-custom-white text-lg font-bold">✓</span>
                             <div>
-                              <p className="text-green-400 font-semibold text-sm">CSV file loaded!</p>
+                              <p className="text-custom-white font-semibold text-sm">CSV file loaded!</p>
                               {personasData && (
-                                <p className="text-xs text-custom-white/60 mt-0.5">Total personas: {personasData.length}</p>
+                                <p className="text-xs text-custom-light-300 mt-0.5">Total personas: {personasData.length}</p>
                               )}
                             </div>
                           </div>
@@ -433,14 +433,14 @@ export default function VisualDirectionTool() {
                               setPersonasData(null)
                               setPersonasError('')
                             }}
-                            className="text-custom-white/50 hover:text-custom-white/80 transition-colors p-1 rounded hover:bg-custom-black/50"
+                            className="text-custom-light-400 hover:text-custom-white transition-colors p-1 rounded hover:bg-custom-dark-400"
                           >
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                           </button>
                         </div>
-                        <div className="p-2 bg-custom-black/50 rounded text-xs text-blue-400">
+                        <div className="p-2 bg-custom-dark-200 rounded text-xs text-custom-light-200">
                           File: {personasFile.name} ({formatFileSize(personasFile.size)})
                         </div>
                       </div>
@@ -456,7 +456,7 @@ export default function VisualDirectionTool() {
                     value={websiteUrl}
                     onChange={(e) => setWebsiteUrl(e.target.value)}
                     placeholder="https://example.com"
-                    className="w-full px-4 py-3 bg-custom-black/50 border-2 border-custom-black/50 rounded-xl text-custom-white placeholder-custom-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                    className="w-full px-4 py-3 bg-custom-dark-200 border-2 border-custom-dark-500 rounded-xl text-custom-white placeholder-custom-light-400 focus:outline-none focus:ring-2 focus:ring-custom-white focus:border-custom-white transition-all"
                   />
                 </div>
 
@@ -467,15 +467,15 @@ export default function VisualDirectionTool() {
                   className={`
                     w-full py-5 px-8 rounded-xl font-bold text-lg transition-all shadow-lg
                     ${isLoading || !questionnaireFile || !personasFile || !apiKey
-                      ? 'bg-custom-black/50 text-custom-white/30 cursor-not-allowed border-2 border-custom-black/50'
-                      : 'bg-gradient-to-r from-blue-600 to-blue-700 text-custom-white hover:from-blue-700 hover:to-blue-800 active:scale-[0.98] shadow-blue-500/20'
+                      ? 'bg-custom-dark-400 text-custom-dark-600 cursor-not-allowed border-2 border-custom-dark-500'
+                      : 'bg-custom-white text-custom-black hover:bg-custom-light-100 active:scale-[0.98] shadow-custom-white/20'
                     }
                   `}
                 >
                   {isLoading ? (
                     <span className="flex items-center justify-center">
                       <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-custom-white"
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-custom-black"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -502,8 +502,8 @@ export default function VisualDirectionTool() {
                 </button>
 
                 {!apiKey && (
-                  <div className="p-4 bg-yellow-900/20 border border-yellow-700 rounded-lg">
-                    <p className="text-yellow-400 text-sm">
+                  <div className="p-4 bg-custom-dark-300 border border-custom-dark-500 rounded-lg">
+                    <p className="text-custom-light-200 text-sm">
                       ⚠️ Please add VITE_GEMINI_API_KEY to your .env file to use this tool.
                     </p>
                   </div>
@@ -517,7 +517,7 @@ export default function VisualDirectionTool() {
                   <div className="text-center py-20">
                     <div className="flex flex-col items-center gap-6">
                       <svg
-                        className="animate-spin h-16 w-16 text-blue-500"
+                        className="animate-spin h-16 w-16 text-custom-white"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -537,8 +537,8 @@ export default function VisualDirectionTool() {
                         />
                       </svg>
                       <div>
-                        <p className="text-xl font-semibold text-custom-white/80 mb-2">Generating Summary...</p>
-                        <p className="text-custom-white/60">This may take a few moments. Please wait.</p>
+                        <p className="text-xl font-semibold text-custom-white mb-2">Generating Summary...</p>
+                        <p className="text-custom-light-300">This may take a few moments. Please wait.</p>
                       </div>
                     </div>
                   </div>
@@ -546,7 +546,7 @@ export default function VisualDirectionTool() {
                   <SummaryDisplay summary={summary} />
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-custom-white/60">No summary generated yet. Go to "Upload & Generate" tab to create one.</p>
+                    <p className="text-custom-light-300">No summary generated yet. Go to "Upload & Generate" tab to create one.</p>
                   </div>
                 )}
               </div>
@@ -557,17 +557,17 @@ export default function VisualDirectionTool() {
                 {summary.length > 0 ? (
                   <div className="space-y-6">
                     <div>
-                      <svg className="w-16 h-16 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-16 h-16 text-custom-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
                       <h3 className="text-xl font-semibold text-custom-white mb-2">Ready to Download</h3>
-                      <p className="text-custom-white/60 mb-6">Your visual direction summary is ready to export as CSV.</p>
+                      <p className="text-custom-light-300 mb-6">Your visual direction summary is ready to export as CSV.</p>
                     </div>
                     <ExportButton summary={summary} disabled={isLoading} />
                   </div>
                 ) : (
                   <div>
-                    <p className="text-custom-white/60">No summary available to download. Generate a summary first.</p>
+                    <p className="text-custom-light-300">No summary available to download. Generate a summary first.</p>
                   </div>
                 )}
               </div>

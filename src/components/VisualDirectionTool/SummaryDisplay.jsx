@@ -9,12 +9,12 @@ export default function SummaryDisplay({ summary }) {
       {summary.map((section, index) => (
         <div
           key={index}
-          className="bg-custom-black/50 rounded-lg p-6 border border-custom-black/50"
+          className="bg-custom-dark-200 rounded-lg p-6 border border-custom-dark-500"
         >
           <h3 className="text-xl font-semibold text-custom-white mb-3">
             {section.section}
           </h3>
-          <div className="text-custom-white/80 whitespace-pre-wrap leading-relaxed">
+          <div className="text-custom-light-200 whitespace-pre-wrap leading-relaxed">
             {section.content}
           </div>
         </div>

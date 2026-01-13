@@ -36,8 +36,8 @@ export default function ExportButton({ summary, disabled }) {
       className={`
         px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center gap-2 mx-auto
         ${disabled
-          ? 'bg-custom-black/50 text-custom-white/30 cursor-not-allowed'
-          : 'bg-blue-600 text-custom-white hover:bg-blue-700 active:bg-blue-800'
+          ? 'bg-custom-dark-400 text-custom-dark-600 cursor-not-allowed'
+          : 'bg-custom-white text-custom-black hover:bg-custom-light-100 active:bg-custom-light-200'
         }
       `}
     >
